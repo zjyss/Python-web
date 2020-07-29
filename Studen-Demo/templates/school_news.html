@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block ext_js %}
+    <script src="../static/js/jquery.js"></script>
+    <script src="../static/js/vue.js"></script>
+{% endblock %}
+{% block col-8 %}
+    <div class="col-md-8">
+        <HR align=center width=100% color=blue SIZE=1>
+        <h4>{{ today }}
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ data }}</h4>
+        <HR align=center width=100% color=blue SIZE=1>
+        <div id="news" style="width: 100%;float: left">
+            {#<button @click="getnews" style="width: 100px;height: 100px"></button>#}
+            <div class="col-md-4 column" v-for="newss in newslists">
+                {% verbatim %}
+                <h2 style="width: 300px;height: 65px;overflow: hidden">
+                    {{ newss.title }}
+                </h2>
+                {% endverbatim %}
+                <img :src="newss.picUrl" alt="" style="height: 200px;width: 300px">
+{#                <a v-bind:href='newss.picUrl '></a>#}
+                <p>
+                    <a class="btn" v-bind:href='newss.url'>查看详情 »</a>
+                </p>
+            </div>
+
+
+            {#填充5个新闻bug部位#}
+            {#<div class="col-md-4 column">#}
+            {#			<h2>#}
+            {#				{{i.news_title}}#}
+            {#			</h2>#}
+            {#			<p style="padding-left: 30px;padding-top:-10px">#}
+            {#                <img src=../static/Images/logo.jpg>#}
+            {#			</p>#}
+            {##}
+            {#		</div>#}
+        </div>
+        <div style="float: left;width: 970px">
+            <nav aria-label="Page navigation" class="text-center" style="border-bottom: 0px">
+                <ul class="pagination">
+                    <li>
+                        <a href="/school_news?page={{ privious_page }}" aria-label="Previous" style="color: aquamarine">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    {% for num in page_num %}
+                        <li><a href="/school_news?page={{ num }}">{{ num }}</a></li>
+                    {% endfor %}
+                    <li>
+                        <a href="/school_news?page={{ next_page }}" aria-label="Next" style="color: aquamarine">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+{% endblock %}
+{% block aa %}
+    <script src="../static/js/news.js"></script>
+{% endblock %}
