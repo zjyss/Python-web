@@ -1,0 +1,168 @@
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="zxx">
+<!-- Head -->
+
+<head>
+    <title>Key Login Form Flat Responsive Widget Template :: W3layouts</title>
+    <!-- Meta-Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Key Login Form a Responsive Web Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible Web Template, Smartphone Compatible Web Template, Free Webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta-Tags -->
+    <!-- Index-Page-CSS -->
+    <link rel="stylesheet" href="../../static/front/css/style.css" type="text/css" media="all">
+    <!-- //Custom-Stylesheet-Links -->
+    <!--fonts -->
+    <!-- //fonts -->
+    <link rel="stylesheet" href="../../static/front/css/font-awesome.min.css" type="text/css" media="all">
+    <!-- //Font-Awesome-File-Links -->
+
+	<!-- Google fonts -->
+	<link href="//fonts.googleapis.com/css?family=Quattrocento+Sans:400,400i,700,700i" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Mukta:200,300,400,500,600,700,800" rel="stylesheet">
+	<!-- Google fonts -->
+    <script src="/static/front/js/jquery-1.12.4.js"></script>
+    <script src="/static/front/js/register.js"></script>
+</head>
+<!-- //Head -->
+<!-- Body -->
+
+<body>
+
+<section class="main">
+	<div class="layer">
+
+		<div class="bottom-grid">
+			<div class="logo">
+				<h1> <a href="index.html"><span class="fa fa-key"></span> Blog</a></h1>
+			</div>
+			<div class="links">
+				<ul class="links-unordered-list">
+					<li>
+						<a href="{{ url_for('front.login') }}" class="">登陆</a>
+					</li>
+					<li class="active">
+						<a href="" class="">注册</a>
+					</li>
+					<li class="">
+						<a href="#" class="">关于</a>
+					</li>
+					<li class="">
+						<a href="#" class="">联系</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="content-w3ls">
+			<div class="text-center icon">
+				<span class="fa fa-html5"></span>
+			</div>
+			<div class="content-bottom">
+				<form action="" method="post">
+					<div class="field-group">
+
+						<div class="wthree-field">
+							<input name="username" id="username" type="text" value="" placeholder="Username" required>
+						</div>
+					</div>
+
+                    <div class="field-group">
+
+						<div class="wthree-field">
+							<input name="phone" id="phone" type="Password_check" placeholder="Telephone" required>
+
+                        </div>
+					</div>
+{#                    短信验证#}
+{#                    <div class="field-group">#}
+{#						<div class="wthree-field">#}
+{#							<input name="phone_code" id="phone_code" type="Password_check" placeholder="Telephone Code" required>#}
+{#                        </div><span class="">GET&nbsp;CODE</span>#}
+{#					</div>#}
+{#                    <div style="padding-left: 10px;padding-bottom: 10px">#}
+{#                            <span style="color: #cccccc">性别：</span>#}
+{##}
+{#							<input name="gender" type="radio" value=1 required><span style="color: #cccccc">男</span>#}
+{#                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#}
+{#							<input name="gender" type="radio" value=0 required><span style="color:#cccccc;">女</span>#}
+{#					</div>#}
+
+					<div class="field-group">
+
+						<div class="wthree-field">
+							<input name="password" id="password" placeholder="Password" required>
+						</div>
+					</div>
+{#验证码验证#}
+                    <div class="field-group">
+						<div class="wthree-field">
+							<input name="img_grapth" id="img_grapth" placeholder="Input Code" required>
+						</div>
+
+					</div><span  style="padding-left: 60px"><img id="capture_img" src="{{ url_for('common.capture') }}"  style="width: 200px;height: 50px" alt=""></span>
+
+
+
+
+
+					<div class="wthree-field">
+						<button type="submit" class="btn">注册</button>
+					</div>
+					<ul class="list-login">
+						<li class="switch-agileits">
+							<label class="switch">
+								<input type="checkbox">
+								<span class="slider round"></span>
+								keep Logged in
+							</label>
+						</li>
+						<li>
+							<a href="#" class="text-right">forgot password?</a>
+						</li>
+						<li class="clearfix"></li>
+					</ul>
+
+				</form>
+			</div>
+		</div>
+<!--		<div class="bottom-grid1">-->
+<!--			<div class="links">-->
+<!--				<ul class="links-unordered-list">-->
+<!--					<li class="">-->
+<!--						<a href="#" class="">About Us</a>-->
+<!--					</li>-->
+<!--					<li class="">-->
+<!--						<a href="#" class="">Privacy Policy</a>-->
+<!--					</li>-->
+<!--					<li class="">-->
+<!--						<a href="#" class="">Terms of Use</a>-->
+<!--					</li>-->
+<!--				</ul>-->
+<!--			</div>-->
+<!--			<div class="copyright">-->
+<!--				<p>© 2019 Key. All rights reserved | Design by-->
+<!--					<a href="http://w3layouts.com">W3layouts</a>-->
+<!--				</p>-->
+<!--			</div>-->
+		</div>
+    </div>
+</section>
+
+</body>
+<!-- //Body -->
+</html>

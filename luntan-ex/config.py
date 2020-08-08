@@ -1,0 +1,22 @@
+USERNAME = 'root'
+PASSWORD = '1234'
+HOSTNAME = '127.0.0.1'
+PORT = 3306
+DATABASE = 'bbs'
+
+DB_URI = "mysql+pymysql://%s:%s@%s:%s/%s?charset=utf8" % (USERNAME, PASSWORD, HOSTNAME, PORT, DATABASE)
+SQLALCHEMY_DATABASE_URI = DB_URI
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+PER_PAGE = 3
+SESSION_KEEPUSER = 'userid'
+SESSION_FRONT_KEEPUSER = 'frontuserid'
+# 邮箱
+MAIL_SERVER = 'smtp.qq.com'
+MAIL_PORT = '587'
+MAIL_USE_TLS = True
+MAIL_PASSWORD = 'fskziwlzrnrzbdgi'  # 授权码 不是邮箱密码
+MAIL_USERNAME = '736195047@qq.com'
+MAIL_DEFAULT_SENDER = '736195047@qq.com'
+
+CELERY_BROKER_URL = 'redis://127.0.0.1/0'
+CELERY_RESULT_BACKEND = 'redis://127.0.0.0/1'

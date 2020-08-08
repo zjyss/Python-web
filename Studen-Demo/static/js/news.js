@@ -5,12 +5,11 @@ let vm = new Vue({
     },
     methods: {
         getnews: function () {
+
             $.get(
-                'http://api.tianapi.com/areanews/index',
+                '',
                 {
-                    'key': 'dfa319efc6ed6e4aa30f38804105bdfc',
-                    'areaname': '湖北',
-                    'num': '5'
+                    
                 },
                 function (data) {
                     for (let i=0;i<6;i++){

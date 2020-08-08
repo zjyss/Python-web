@@ -1,0 +1,72 @@
+{% extends 'front/index.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block main %}
+<div class="lg-container" style="padding-left: 10%">
+
+
+            <div class="post-group">
+                <ul class="post-group-head">
+
+                    <li class="active"><a href="{{ url_for("front.index",st=1) }}">最新</a></li>
+
+
+                    <li class=""><a href="{{ url_for("front.index",st=2) }}">精华帖子</a></li>
+
+
+                    <li class=""><a href="{{ url_for("front.index",st=3) }}">点赞最多</a></li>
+
+
+                    <li class=""><a href="{{ url_for("front.index",st=4) }}">评论最多</a></li>
+
+
+                </ul>
+                <ul class="post-list-group">
+{#                {% if  posts %}#}
+
+                    {% for post in posts %}
+                        <li>
+                            <div class="author-avatar-group">
+                                <img src=""
+                                     alt="">
+                            </div>
+                            <div class="post-info-group">
+                                <p class="post-title">
+                                    <a href="#"></a>
+
+                                    {#                            <span class="label label-danger">精华帖</span>#}
+
+                                </p>
+
+                                <p class="post-info">
+                                <p class="post-title">
+                                    <a href="{{ url_for('front.detail',post_id=post.id) }}">{{ post.title }}</a>
+
+                                    {#                                    <span class="label label-danger">精华帖</span>#}
+
+                                </p>
+
+                                <span>作者:{{ post.author.name }}</span>
+                                <span>发表时间:{{ post.create_time }}</span>
+                                <span>评论:0</span>
+                                <span>阅读:0</span>
+                                </p>
+
+                            </div>
+                        </li>
+                    {% endfor %}
+{#                    {% else %}#}
+{#                    暂无相关文章#}
+{#                {% endif %}#}
+                </ul>
+                <div style="text-align:center;">
+                    {#                    分页#}
+{#                    {{ pagination.links }}#}
+                </div>
+            </div>
+
+        </div>
+        </div>
+{% endblock %}

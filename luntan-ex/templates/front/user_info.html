@@ -1,0 +1,58 @@
+{% extends 'front/index.html' %}
+
+
+{% block main %}
+
+    <table class="table table-bordered">
+        <h3>个人中心</h3>
+        <thead>
+        <tr>
+            <th>用户名</th>
+            <th>手机号</th>
+            <th>加入时间</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{ g.front_user.name }}</td>
+            <td>{{ g.front_user.phone }}</td>
+            <td>{{ g.front_user.join_time }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <ul class="nav nav-pills">
+        <li><a href="{{ url_for('front.user_info',st=1) }}">我的帖子</a></li>
+        <li><a href="{{ url_for('front.user_info',st=2) }}">我的点赞</a></li>
+        <li><a href="#">iOS</a></li>
+
+
+    </ul>
+    {% if flag == 1 %}
+        {% for dianzan in dianzans %}
+            <div>
+                <hr>
+{#                <h4>{{ post.name }}</h4>#}
+                <h6>{{ dianzan.create_time }}</h6>
+                <h5><a href="{{ url_for('front.detail', post_id=dianzan.post_id) }}">{{ dianzan.post.title }}</a></h5>
+                <span>评论：<a href="{{ url_for('front.detail', post_id=dianzan.post_id) }}">{{ dianzan.post.common_totle }}</a></span>
+                &nbsp;&nbsp;
+                <span>点赞</span>
+                <span class="glyphicon glyphicon-heart">&nbsp;&nbsp;{{ dianzan.post.dianzan_totle }}</span>
+            </div>
+        {% endfor %}
+    {% else %}
+        {% for post in posts %}
+            <div>
+                <hr>
+                <h4>{{ post.name }}</h4>
+                <h6>{{ post.create_time }}</h6>
+                <h5><a href="{{ url_for('front.detail', post_id=post.id) }}">{{ post.title }}</a></h5>
+                <span>评论：<a href="{{ url_for('front.detail', post_id=post.id) }}">{{ post.common_totle }}</a></span>
+                &nbsp;&nbsp;
+                <span>点赞</span>
+                <span class="glyphicon glyphicon-heart">&nbsp;&nbsp;{{ post.dianzan_totle }}</span>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
